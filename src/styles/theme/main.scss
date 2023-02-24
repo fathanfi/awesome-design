@@ -1,0 +1,379 @@
+@import "global";
+
+
+/*Headerpages*/
+
+.headerpages {
+    position: relative;
+    margin-bottom: 18rem;
+    padding-bottom: 23rem;
+
+    &__head {
+        text-align: center;
+        max-width: 70rem;
+        margin: 0 auto 1rem;
+    }
+
+    &__title {
+        font-family: 'Arvo';
+        font-size: 3.6rem;
+        color: $primary;
+        font-weight: 400;
+    }
+
+    &__badge {
+        position: absolute;
+        width: 4rem;
+        inset: 10% 0% 0% 59%;
+    }
+
+    &__description {
+        margin-top: 2.5rem;
+        font-size: 1.8rem;
+        line-height: 1.7;
+        font-weight: 400;
+        color: $secondary;
+        max-width: 56rem;
+    }
+
+    &__action {
+        display: flex;
+        grid-gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    &__videocta {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: drop-shadow(0 0 0.75rem rgba(27, 31, 35, 0.15));
+    }
+
+    &__playbutton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*End Headerpages*/
+
+/*Opportunities*/
+
+.opportunities {
+    position: relative;
+
+    &__img {
+        position: absolute;
+        left: -1.5rem;
+        top: -16rem;
+        z-index: -1;
+        img {
+            max-height: 55rem;
+            max-width: 16rem;
+        }
+    }
+
+    &__gallery {
+        display: flex;
+        margin: 0 auto;
+        grid-gap: 3.8rem;
+
+        img {
+            width: 455px;
+            height: 255px;
+            filter: drop-shadow(0 0 0.75rem #1b1f2326);
+        }
+    }
+
+    &__head {
+        text-align: center;
+        max-width: 70rem;
+        margin: 0 auto 1rem;
+    }
+
+    &__title {
+        font-size: 3.6rem;
+        color: $primary;
+    }
+
+    &__description {
+        margin: 6rem 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.8;
+        color: $primary;
+    }
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 0;
+        align-self: baseline;
+    }
+}
+
+.opportunity {
+    width: 33%;
+    background-color: $white;
+    padding: 0 3rem 0;
+    transition: all 0.3s ease-out;
+    text-align: center;
+
+    border-top: 1px solid $border;
+    border-left: 1px solid $border;
+
+    &:nth-child(-n+2){
+        border-top: 1px solid $border;
+    }
+    &:nth-child(odd){
+        border-left: 1px solid $border;
+    }
+    &:nth-child(-n+3){
+        border-top: none;
+        padding-bottom: 3rem;
+    }
+    &:nth-child(n+4){
+        padding-top: 3rem;
+    }   
+    &:first-child,
+    &:nth-child(3n+1){
+        border-left: none;
+    }
+
+    &.active {
+        background-color: $orange;
+        .opportunity__title,
+        .opportunity__description {
+            color: $white;
+        }
+    }
+
+    &__icon {
+        height: 3.2rem;
+        width: initial;
+    }
+
+    &__title {
+        color: $primary;
+        color: #444;
+        line-height: 1.4;
+        margin: 1rem;
+        max-width: 18rem;
+        font-size: 1.8rem;
+    }
+
+    &__description {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        font-weight: 400;
+        color: $secondary;
+    }
+}
+
+/*End Opportunities*/
+
+/*Start Button Action*/
+
+.btn__action {
+    width: 20rem;
+    font-weight: 700;
+    color: $secondary;
+    text-align: center;
+    border: 1px solid $border;
+
+    &__active{
+        font-weight: 700;
+        border: 1px solid $border;
+        color: $white;
+        min-width: 25rem;
+        @include btnHoverAnimate($orange,
+        $dark-orange,
+        $white);
+    }
+}
+
+/* End Button Action */
+
+/*Testimonials*/
+
+.testimonials {
+    margin-top: 1rem;
+    background-image: linear-gradient(to bottom, $lightgrey, $white);
+
+    &__action {
+        display: flex;
+        grid-gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        text-align: center;
+        max-width: 70rem;
+        margin: 0 auto 1rem;
+    }
+
+    &__head {
+        position: relative;
+        margin: auto;
+    }
+
+    &__quote {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-height: 11rem;
+        width: auto;
+    }
+
+    &__title {
+        font-size: 3.6rem;
+        max-width: 45rem;
+    }
+
+    &__body {
+        margin: 1rem auto 1rem;
+        width: 100%;
+        padding: 2rem 0;
+        position: relative;
+        &::before {
+            left: 0;
+            filter: drop-shadow(5rem 0 4rem $white);
+        }
+        &::after {
+            right: 0;
+            filter: drop-shadow(-5rem 0 4rem $white);
+        }
+    }
+
+    &__list {
+        grid-gap: 2.5rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.testimonial {
+    flex-shrink: 0;
+    width: 30%;
+    padding: 2.5rem;
+    transition: transform .3s ease;
+    border: 1px solid $border;
+    border-radius: 1rem;
+
+    &__profile {
+        display: flex;
+        grid-gap: 2.5rem;
+        justify-content: space-between;
+    }
+
+    &__info {
+        font-size: 1rem;
+        color: $hint-text;
+        display: flex;
+
+        &:before {
+            color: inherit;
+            content: "—";
+        }
+    }
+
+    &__star {
+        display: flex;
+
+        &__rating {
+            background: url('./assets/img/wpforms/icons/star-solid.svg') no-repeat;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__description {
+        margin: 1rem 0;
+        font-size: 1.4rem;
+        color: $secondary;
+        line-height: 1.7;
+    }
+
+    &__highlight {
+        transform: scale(1.1);
+        z-index: 1;
+    }
+}
+
+/*End Testimonials*/
+
+/* Features */
+
+.features {
+    position: relative;
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+        grid-gap: 2.5rem;
+        margin: 0 auto;
+    }
+
+    &__image {
+        filter: drop-shadow(0 0 0.75rem #1b1f2326);
+    }
+
+    &__item {
+        padding: 0 2.5rem;
+
+        &__title {
+            color: $primary;
+            font-weight: 700;
+            font-size: 2.1rem;
+            max-width: 40rem;
+            padding-bottom: 2rem;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: $secondary;
+            max-width: 40rem;
+        }
+    }
+}
+
+/*End Features */
+
+/*Footer*/
+
+.footer {
+    position: relative;
+    margin: 1rem auto 7rem;
+
+    &__header{
+        font-size: 2rem;
+        line-height: 1.7;
+        font-weight: 700;
+        color: $primary;
+        text-align: center;
+    }
+
+    &__copyright{
+        font-size: 1.4rem;
+        line-height: 1.7;
+        text-align: center;
+        font-weight: 400;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+        }
+       
+    }
+}
+
+/*End Footer*/
+
+@import 'mediaQueries';
