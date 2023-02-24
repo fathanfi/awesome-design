@@ -1,5 +1,5 @@
 @import "global";
-
+@import 'mediaQueries';
 
 /*Headerpages*/
 
@@ -10,8 +10,9 @@
 
     &__head {
         text-align: center;
-        max-width: 70rem;
-        margin: 0 auto 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
     }
 
     &__title {
@@ -33,7 +34,7 @@
         line-height: 1.7;
         font-weight: 400;
         color: $secondary;
-        max-width: 56rem;
+		max-width: 56rem;
     }
 
     &__action {
@@ -375,5 +376,3 @@
 }
 
 /*End Footer*/
-
-@import 'mediaQueries';
