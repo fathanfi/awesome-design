@@ -1,12 +1,27 @@
 @import "global";
 @import 'mediaQueries';
 
+/*General*/
+
+section {
+    padding: 5rem 0;
+
+	@include breakpoint(mobile) {
+    	padding: 2.5rem;
+	}
+}
+
 /*Headerpages*/
 
 .headerpages {
     position: relative;
-    margin-bottom: 18rem;
+	margin-bottom: 18rem;
     padding-bottom: 23rem;
+
+	@include breakpoint(mobile) {
+		margin-bottom: 12rem;
+    	padding-bottom: 15rem;
+	}
 
     &__head {
         text-align: center;
@@ -14,6 +29,11 @@
 		flex-direction: column;
 		align-items: center;
     }
+
+	&__heading {
+		display: flex;
+		flex-direction: unset;
+	}
 
     &__title {
         font-family: 'Arvo';
@@ -23,9 +43,7 @@
     }
 
     &__badge {
-        position: absolute;
         width: 4rem;
-        inset: 10% 0% 0% 59%;
     }
 
     &__description {
@@ -35,6 +53,10 @@
         font-weight: 400;
         color: $secondary;
 		max-width: 56rem;
+
+		@include breakpoint(mobile) {
+			width: 100%;
+		}
     }
 
     &__action {
@@ -42,14 +64,36 @@
         grid-gap: 1rem;
         justify-content: center;
         margin-top: 2rem;
+
+		@include breakpoint(mobile) {
+			flex-direction: column;
+		}
     }
 
     &__videocta {
         position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+		top: 100%;
         filter: drop-shadow(0 0 0.75rem rgba(27, 31, 35, 0.15));
+
+		@include breakpoint(mobile) {
+			left: 15%;
+			transform: translate(-10%, -50%);
+		}
+
+		@include breakpoint(xs) {
+			left: 15%;
+			transform: translate(-10%, -50%);
+		}
+
+		@include breakpoint(md) {
+			left: 40%;
+			transform: translate(-35%, -50%);
+		}
+
+		@include breakpoint(lg) {
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
     }
 
     &__playbutton {
@@ -83,6 +127,10 @@
         margin: 0 auto;
         grid-gap: 3.8rem;
 
+		@include breakpoint(mobile) {
+			flex-direction: column;
+		}
+
         img {
             width: 455px;
             height: 255px;
@@ -114,6 +162,13 @@
         flex-wrap: wrap;
         grid-gap: 0;
         align-self: baseline;
+
+		@include breakpoint(mobile) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
     }
 }
 
@@ -127,11 +182,25 @@
     border-top: 1px solid $border;
     border-left: 1px solid $border;
 
+	@include breakpoint(mobile) {
+		border: none;
+		width: 100%;
+		border: none;
+	}
+
     &:nth-child(-n+2){
         border-top: 1px solid $border;
+
+		@include breakpoint(mobile) {
+			border: none;
+		}
     }
     &:nth-child(odd){
         border-left: 1px solid $border;
+	
+		@include breakpoint(mobile) {
+			border: none;
+		}
     }
     &:nth-child(-n+3){
         border-top: none;
@@ -165,6 +234,10 @@
         margin: 1rem;
         max-width: 18rem;
         font-size: 1.8rem;
+
+		@include breakpoint(mobile) {
+			max-width: 100%;
+		}
     }
 
     &__description {
@@ -195,6 +268,10 @@
         $dark-orange,
         $white);
     }
+
+	@include breakpoint(mobile) {
+		width: 100%;
+	}
 }
 
 /* End Button Action */
@@ -213,6 +290,11 @@
         text-align: center;
         max-width: 70rem;
         margin: 0 auto 1rem;
+
+		@include breakpoint(mobile) {
+			width: 100%;
+			flex-direction: column;
+		}
     }
 
     &__head {
@@ -252,10 +334,14 @@
         grid-gap: 2.5rem;
         display: flex;
         justify-content: center;
-        position: relative;
         flex-wrap: wrap;
         flex-direction: row;
         align-items: flex-start;
+
+		@include breakpoint(mobile) {
+			grid-gap: 0;
+			flex-direction: column;
+		}
     }
 }
 
@@ -266,6 +352,11 @@
     transition: transform .3s ease;
     border: 1px solid $border;
     border-radius: 1rem;
+
+	@include breakpoint(mobile) {
+		width: 100%;
+		margin: 1rem 0;
+	}
 
     &__profile {
         display: flex;
@@ -328,6 +419,10 @@
     &__item {
         padding: 0 2.5rem;
 
+		@include breakpoint(mobile) {
+			padding: 0;
+		}
+
         &__title {
             color: $primary;
             font-weight: 700;
@@ -352,6 +447,10 @@
 .footer {
     position: relative;
     margin: 1rem auto 7rem;
+
+	@include breakpoint(mobile) {
+    	padding: 2.5rem;
+	}
 
     &__header{
         font-size: 2rem;
